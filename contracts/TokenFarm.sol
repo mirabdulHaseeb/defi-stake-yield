@@ -33,7 +33,7 @@ contract TokenFarm is Ownable {
     function getUserTotalValue(address _user) public view returns(uint256) {
         uint256 totalValue = 0;
         require(uniqueTokensStaked[_user] > 0, "No tokens staked!");
-        for(uint256 allowedTokensIndex =0; allowedTokens.length < allowedTokensIndex; allowedTokensIndex ++) {
+        for(uint256 allowedTokensIndex =0; allowedTokensIndex < allowedTokens.length; allowedTokensIndex ++) {
             totalValue += getUserSingleTokenValue(_user, allowedTokens[allowedTokensIndex]);
         }
         return totalValue;
